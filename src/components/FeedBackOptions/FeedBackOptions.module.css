@@ -1,0 +1,21 @@
+.buttonStyleCommon {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.button {
+  font-size: 25px;
+  width: 150px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.button:hover {
+  box-shadow: 0 0 10px 0 #bdbabb inset, 0 0 10px 4px #f3f3f3;
+  cursor: pointer;
+}
