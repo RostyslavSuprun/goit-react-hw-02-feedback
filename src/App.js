@@ -16,7 +16,6 @@ class App extends Component {
     const currentBtnValue = e.currentTarget.value;
     this.setState(prevState => {
       return {
-        ...prevState,
         [currentBtnValue]: prevState[currentBtnValue] + 1,
       };
     });
@@ -30,13 +29,13 @@ class App extends Component {
     });
   };
 
-  PositivePercentage = () => {
+  positivePercentage = () => {
     return Math.trunc((this.state.good / this.countTotalFeedback()) * 100);
   };
 
   render() {
     const btnSense = Object.keys(this.state);
-    const { onLeaveFeedback, state, countTotalFeedback, PositivePercentage } =
+    const { onLeaveFeedback, state, countTotalFeedback, positivePercentage } =
       this;
 
     return (
@@ -54,7 +53,7 @@ class App extends Component {
             <Statistics
               state={state}
               total={countTotalFeedback()}
-              positivePercentage={PositivePercentage()}
+              positivePercentage={positivePercentage()}
             />
           </Section>
         )}
