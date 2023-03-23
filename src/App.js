@@ -35,8 +35,9 @@ class App extends Component {
 
   render() {
     const btnSense = Object.keys(this.state);
-    const { onLeaveFeedback, state, countTotalFeedback, positivePercentage } =
-      this;
+
+    const { state } = this.state;
+    const { onLeaveFeedback, countTotalFeedback, positivePercentage } = this;
 
     return (
       <Container>
