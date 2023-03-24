@@ -36,25 +36,22 @@ class App extends Component {
   render() {
     const btnSense = Object.keys(this.state);
 
-    const { state } = this.state;
-    const { onLeaveFeedback, countTotalFeedback, positivePercentage } = this;
-
     return (
       <Container>
         <Section title="Please Leave Your Feedback">
           <FeedBackOptions
             options={btnSense}
-            onLeaveFeedback={onLeaveFeedback}
+            onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
-        {countTotalFeedback() === 0 ? (
+        {this.countTotalFeedback() === 0 ? (
           <Notification message="No FeedBack Given" />
         ) : (
           <Section title="Statistics">
             <Statistics
-              state={state}
-              total={countTotalFeedback()}
-              positivePercentage={positivePercentage()}
+              state={this.state}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.positivePercentage()}
             />
           </Section>
         )}
